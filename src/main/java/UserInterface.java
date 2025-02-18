@@ -1,10 +1,8 @@
 public class UserInterface {
-	private static final String CREAM = "\u001B[38;5;11m",cyan = "\u001B[38;5;153m",yellow="\u001B[38;5;227m",PURPLE ="\u001B[38;5;177m";
-	private static final String RESET = "\u001B[0m",red="\u001B[38;5;160m";
-	private static final String combinedColour2 = "\u001B[38;5;17m\u001B[48;5;15m";
-	private static final String green = "\u001B[38;5;2m", colour="\u001B[38;5;174m";
-	private static final String colour7 = "\u001B[38;5;33m", pink ="\u001B[38;5;169m";
-	private static final String mint="\u001B[38;5;157m",orange="\u001B[38;5;209m";
+	public static final String CREAM = "\u001B[38;5;11m",CYAN = "\u001B[38;5;153m",YELLOW="\u001B[38;5;227m",PURPLE ="\u001B[38;5;177m";
+	public static final String RESET = "\u001B[0m",RED="\u001B[38;5;160m",COMBINED_COLOUR2 = "\u001B[38;5;17m\u001B[48;5;15m";
+	public static final String GREEN = "\u001B[38;5;2m",BLUE = "\u001B[38;5;33m", PINK ="\u001B[38;5;169m";
+	public static final String MINT="\u001B[38;5;157m",ORANGE="\u001B[38;5;209m";
 
 	public void ZigzagAscii() {
 		String[] asciiArt = {
@@ -19,7 +17,7 @@ public class UserInterface {
 		};
 		System.out.println();
 		for (String line : asciiArt) {
-			System.out.println(combinedColour2+line+RESET);
+			System.out.println(COMBINED_COLOUR2+line+RESET);
 		}
 		//welcome message 
 		System.out.println("\rWelcome to the SwiftBot Zigzag Path Program!\r\n"
@@ -43,7 +41,7 @@ public class UserInterface {
 				+ " |_| |_| \\___/__/__/ \\__,_| |___/\\_,_|\\__|\\__\\___/_||_|\r\n"
 				+ "                                                       "};
 		for(String line: press) {
-			System.out.println(colour7+line);
+			System.out.println(BLUE+line);
 		}
 		System.out.println("Press Button Y to Scan QR Code\n"+
 				"Press Button X to view record of journey and exit the program\n"+
@@ -70,9 +68,9 @@ public class UserInterface {
 				+ "                                                           "
 		};
 		for(String line: Unsuccessful) {
-			System.out.println(red+line+RESET);
+			System.out.println(RED+line+RESET);
 		}
-		System.out.println(red+"\nERROR: Unable to scan for code.\n"+RESET);
+		System.out.println(RED+"\nERROR: Unable to scan for code.\n"+RESET);
 	}
 	public void successUI() {
 		String [] success = {""
@@ -82,7 +80,7 @@ public class UserInterface {
 				+ " |___/\\___/ \\___\\___|___|___/___/  \\__\\_\\_|_\\  \\___\\___/|___/|___| |_| \\___/ \\___/|_|\\_|___/ \r\n"
 				+ "                                                                                             "};
 		for(String line: success) {
-			System.out.println(green+line+RESET);
+			System.out.println(GREEN+line+RESET);
 		}
 		System.out.println("Inputs recieved\n");
 	}
@@ -96,7 +94,7 @@ public class UserInterface {
 				+ "                                                                                                 "
 		};
 		for(String line: success2) {
-			System.out.println(green+line+RESET);
+			System.out.println(GREEN+line+RESET);
 		}
 	}
 
@@ -109,9 +107,9 @@ public class UserInterface {
 				+ "                                                              "
 		};
 		for(String line: invalid) {
-			System.out.println(red+line+RESET);
+			System.out.println(RED+line+RESET);
 		}
-		System.out.println(red+"ERROR: The values decoded are invalid\n"+RESET);
+		System.out.println(RED+"ERROR: The values decoded are invalid\n"+RESET);
 		System.out.println(CREAM+"The format of the code should be value1:value2\n"+RESET);
 		System.out.println(CREAM+"Value1 should be between 15 and 85\n"+RESET);
 		System.out.println(CREAM+"value2 should be smaller than or equal to 12 and should be an even number\n"+RESET);
@@ -119,10 +117,36 @@ public class UserInterface {
 
 	public void colourUI() {
 		System.out.println("Enter the corresponding number to select colours for the SwiftBot underlights colour customisation:\n"+RESET);
-		System.out.println("1 - "+red+"Red"+RESET+" and"+green+" Green\n"+RESET);
-		System.out.println("2 - "+pink+"Pink"+RESET+" and"+yellow+" Yellow\n"+RESET);
-		System.out.println("3 - "+PURPLE+"Purple"+RESET+" and"+mint+" Mint\n"+RESET);
-		System.out.println("4 - "+cyan+"Sky Blue"+RESET+" and"+orange+" Orange\n"+RESET);
-		System.out.println("Press any other key to use default colors ("+green+"Green"+RESET+" and "+colour7+" Blue).\n"+RESET);
+		System.out.println("1 - "+RED+"Red"+RESET+" and"+GREEN+" Green\n"+RESET);
+		System.out.println("2 - "+PINK+"Pink"+RESET+" and"+YELLOW+" Yellow\n"+RESET);
+		System.out.println("3 - "+PURPLE+"Purple"+RESET+" and"+MINT+" Mint\n"+RESET);
+		System.out.println("4 - "+CYAN+"Sky Blue"+RESET+" and"+ORANGE+" Orange\n"+RESET);
+		System.out.println("Press any other key to use default colors ("+GREEN+"Green"+RESET+" and "+BLUE+" Blue).\n"+RESET);
+	}
+	
+	public void retraceUI() {
+		System.out.println(CREAM+"SwiftBot is turning back to retrace its path.\r\n"+RESET);
+		System.out.println("RETRACING PATH\n");
+		System.out.println(CREAM+"Traversing the path with same number of ZigZag turns\n"+RESET);
+	}
+	
+	public void journeyComplete() {
+		System.out.println(GREEN+"ZIGZAG JOURNEY COMPLETED\n");
+		System.out.println(GREEN+"The SwiftBot has reached its original position\n"+RESET);
+		System.out.println("Turning the LEDs off\n"+RESET);
+	}
+	
+	public void exit() {
+		String []thankYou = {
+				"\n  _____ _              _                   \r\n"
+						+ " |_   _| |_  __ _ _ _ | |__  _  _ ___ _  _ \r\n"
+						+ "   | | | ' \\/ _` | ' \\| / / | || / _ \\ || |\r\n"
+						+ "   |_| |_||_\\__,_|_||_|_\\_\\  \\_, \\___/\\_,_|\r\n"
+						+ "                             |__/          "
+		};
+		for (String line : thankYou) {
+			System.out.println(BLUE+line+RESET);
+		}
+		System.out.println("Exiting the program.\n");
 	}
 }
